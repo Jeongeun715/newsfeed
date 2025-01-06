@@ -17,10 +17,10 @@ const Router = () => {
           <Route path="/feeds/:id" element={<Detail />} />
           <Route path="/feeds/create" element={<CreatePage />} />
           <Route path="/feeds/update/:id" element={<UpdatePage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<MyPage />} />
         </Route>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

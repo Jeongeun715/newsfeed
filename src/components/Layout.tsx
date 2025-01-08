@@ -11,7 +11,7 @@ const Layout = () => {
 
   return (
     <>
-      <header className="flex justify-between bg-white p-4 border-b border-gray-200 items-center">
+      <header className="flex justify-between items-center p-4 border-b border-gray-200 bg-white mb-10">
         <Link to="/">
           <img src="/logo.svg" alt="logo" />
         </Link>

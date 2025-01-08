@@ -84,6 +84,7 @@ const Signup = () => {
       alert("유저 생성에 실패했습니다.");
       return;
     }
+
     alert("회원가입에 성공했습니다.");
     navigate("/");
   };

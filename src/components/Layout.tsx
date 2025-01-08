@@ -1,10 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
 import supabase from "../utils/supabase";
+import useAuthStore from "../stores/useAuthStore";
 
 const Layout = () => {
-  const user = {
-    nickname: "홍길동",
-  };
+  const { user } = useAuthStore(); //주스텐드 가져오기
 
   const handleLogout = async () => {
     await supabase.auth.signOut();

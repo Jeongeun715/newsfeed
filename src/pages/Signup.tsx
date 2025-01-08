@@ -15,11 +15,11 @@ const Signup = () => {
   };
 
   const onNicknameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
+    setNickname(e.target.value);
   };
 
   const onPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNickname(e.target.value);
+    setPassword(e.target.value);
   };
 
   const onPasswordConfirmChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +35,7 @@ const Signup = () => {
       return;
     }
 
-    if (nickname.length <= 3) {
+    if (nickname.length <= 2) {
       alert("닉네임은 3글자 이상이여야 합니다.");
       return;
     }
@@ -73,6 +73,7 @@ const Signup = () => {
       alert("회원가입에 실패했습니다.");
     }
 
+    // 2. users 테이블에도 넣어준다
     const { error: userError } = await supabase.from("users").insert({
       id: data.user?.id,
       email: email,
@@ -141,7 +142,7 @@ const Signup = () => {
             <input
               id="passwordConfirm"
               name="passwordConfirm"
-              type="passwordConfirm"
+              type="password"
               placeholder="비밀번호를 한 번 더 입력해주세요."
               className="border border-gray-300 rounded-md p-2"
               value={passwordConfirm} //상태값과 연결하기

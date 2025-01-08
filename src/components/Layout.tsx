@@ -2,10 +2,9 @@ import { Link, Outlet } from "react-router-dom";
 import supabase from "../utils/supabase";
 
 const Layout = () => {
-  // const user = {
-  // 	nickname: "홍길동",
-  // };
-  const user = null;
+  const user = {
+    nickname: "홍길동",
+  };
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
